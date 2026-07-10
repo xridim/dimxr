@@ -1,2 +1,2 @@
 # dimxr
-αυτό είναι ένα δοκιμαστικό για hosting pages..
+Ενα Reposity με αρχεία στο GITHUB...
