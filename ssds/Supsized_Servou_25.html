@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<!--
+		Supersized - Fullscreen Slideshow jQuery Plugin
+		Version : 3.2.7
+		Site	: www.buildinternet.com/project/supersized
+		
+		Author	: Sam Dunn
+		Company : One Mighty Roar (www.onemightyroar.com)
+		License : MIT License / GPL License
+	-->
+
+	<head>
+
+		<title>Σέρβου Αρκαδίας - SlideShow 25 Photos</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+		<link href="https://lh6.googleusercontent.com/-soVVKRje2sY/UoiBd75O9xI/AAAAAAAABpc/cAGANEoA-dM/s500/Servou_14.jpg" rel="image_src"></link>
+    
+		<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="theme/supersized.shutter.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		
+		<script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+		<script type="text/javascript" src="theme/supersized.shutter.min.js"></script>
+
+
+		
+		<script type="text/javascript">
+			
+			jQuery(function($){
+				
+				$.supersized({
+				
+					// Functionality
+					slide_interval          :   5000,		// Length between transitions
+					transition              :   3, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	700,		// Speed of transition
+															   
+					// Components							
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+														{image : 'https://lh6.googleusercontent.com/-x_bOICnQDic/UoiBXc3o_vI/AAAAAAAABn8/eJWMb05JYMU/s0/Servou_01.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},  
+														{image : 'https://lh6.googleusercontent.com/-2-_JEnOCpCw/UoiBXRjo5XI/AAAAAAAABoA/mBBwniII7FY/s0/Servou_02.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-NbYedafJfyU/UoiBYPW3sfI/AAAAAAAABoI/JsUdMtmyTGM/s0/Servou_03.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh5.googleusercontent.com/-seTXg4nvpTs/UoiBYqbS0qI/AAAAAAAABoQ/BX9_aSVvsXk/s0/Servou_04.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh6.googleusercontent.com/-hnKn7uKIaFc/UoiBZC6dabI/AAAAAAAABoY/Arovkl97BR8/s0/Servou_05.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-RhnCe3T31Tk/UoiBZndkCCI/AAAAAAAABog/OaTZNw0mIUA/s0/Servou_06.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-ZEi23lCSoVo/UoiBaCHq00I/AAAAAAAABoo/bdl1dVwryws/s0/Servou_07.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh5.googleusercontent.com/-Z_EqRAh4Sgk/UoiBaoTq7GI/AAAAAAAABow/GN4QuX9NYGw/s0/Servou_08.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-WIXNhUCUmxY/UoiBbPKqw9I/AAAAAAAABo4/Jew_5_WwrZE/s0/Servou_09.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh5.googleusercontent.com/-jnWfBAnYkGQ/UoiBbkSi8oI/AAAAAAAABpA/OUrD98UHXu0/s0/Servou_10.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-8ChPkxIcJYc/UoiBcAVHHkI/AAAAAAAABpI/pFW43de1ALk/s0/Servou_11.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-Iy0YwbpnguM/UoiBceuanvI/AAAAAAAABpQ/GzDEk-v-xeE/s0/Servou_12.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-jig98QmbXkg/UoiBc5zn4pI/AAAAAAAABpU/_GZmbWALQyU/s0/Servou_13.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh6.googleusercontent.com/-soVVKRje2sY/UoiBd75O9xI/AAAAAAAABpc/cAGANEoA-dM/s0/Servou_14.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},  
+														{image : 'https://lh3.googleusercontent.com/-ZVl-boVucS0/UoiBfPKem7I/AAAAAAAABpo/cx61u9fplz0/s0/Servou_15.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh5.googleusercontent.com/-Wznhzlo8lG4/UoiBfqKy5DI/AAAAAAAABps/FF0mdS4czJo/s0/Servou_16.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-i96Lq0oY5Pg/UoiBgYnCgGI/AAAAAAAABp4/pjCBidQ34L4/s0/Servou_17.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-HFILX8Df0-A/UoiBg6xUDGI/AAAAAAAABqA/n04p6XktK1g/s0/Servou_18.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-2wGzd77opsE/UoiBhW_J5UI/AAAAAAAABqI/BUxyqaDxYaA/s0/Servou_19.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-8boPlVe79Fw/UoiBhywTJ2I/AAAAAAAABqM/1Rk1qyH6QAU/s0/Servou_20.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-wE219Otnv08/UoiBiorcj2I/AAAAAAAABqY/6kAlz8ZAgYo/s0/Servou_21.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-qp3_U-ox3x8/UoiBjOPGKmI/AAAAAAAABqc/Z6xHjS78u5c/s0/Servou_22.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh6.googleusercontent.com/-XHZBkA7rxeM/UoiBkJ79GOI/AAAAAAAABqo/Hr4r1YaxsaU/s0/Servou_23.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh4.googleusercontent.com/-JpRtW3brKfw/UoiBk1BQY8I/AAAAAAAABqw/AUffvyPJEGc/s0/Servou_24.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''},
+														{image : 'https://lh3.googleusercontent.com/-G7tx_Vw8liU/UoiBlgMMycI/AAAAAAAABq0/fM6cFgP2CRQ/s0/Servou_25.jpg', title : 'Σέρβου Αρκαδίας', thumb : '', url : ''} 
+			                                     ]
+				});
+		    });
+		    
+		</script>
+		
+	</head>
+	
+	<style type="text/css">
+		ul#demo-block{ margin:0 15px 15px 15px; }
+			ul#demo-block li{ margin:0 0 10px 0; padding:10px; display:inline; float:left; clear:both; color:#aaa; background:url('img/bg-black.png'); font:11px Helvetica, Arial, sans-serif; }
+			ul#demo-block li a{ color:#eee; font-weight:bold; }
+	</style>
+
+<body>
+
+		
+	<!--End of styles-->
+
+	<!--Thumbnail Navigation-->
+	<div id="prevthumb"></div>
+	<div id="nextthumb"></div>
+	
+	<!--Arrow Navigation-->
+	<a id="prevslide" class="load-item"></a>
+	<a id="nextslide" class="load-item"></a>
+	
+	<div id="thumb-tray" class="load-item">
+		<div id="thumb-back"></div>
+		<div id="thumb-forward"></div>
+	</div>
+	
+	<!--Time Bar-->
+	<div id="progress-back" class="load-item">
+		<div id="progress-bar"></div>
+	</div>
+	
+	<!--Control Bar-->
+	<div id="controls-wrapper" class="load-item">
+		<div id="controls">
+			
+			<a id="play-button"><img id="pauseplay" src="img/pause.png"/></a>
+		
+			<!--Slide counter-->
+			<div id="slidecounter">
+				<span class="slidenumber"></span> / <span class="totalslides"></span>
+			</div>
+			
+			<!--Slide captions displayed here-->
+			<div id="slidecaption"></div>
+			
+			<!--Thumb Tray button-->
+			<a id="tray-button"><img id="tray-arrow" src="img/button-tray-up.png"/></a>
+			
+			<!--Navigation-->
+			<ul id="slide-list"></ul>
+			
+		</div>
+	</div>
+
+</body>
+</html>
