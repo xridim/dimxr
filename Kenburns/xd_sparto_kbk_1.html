@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<head>
+  
+<link href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIwoGkJBUNW29M6cXmknv0lnTf5Ek_Xzo0Jm_O9ug6o6vlk8CAa_44xfb5YYnUWhCb7ukx6JxGfaoMCQDs3jNw1OgbsRY-drOYoPed2cc2n1iuPRW95FKU8SOWwIzVOc24bBwxmfmbwsD0qbgfDWPO7ViTJC8LGNOPuP0UASFBFJvb8PFMlXYcsEo2/s900/sparta_1.jpg" rel="image_src"></link>
+ 
+  
+  
+<!--[if lt IE 9]>
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- META ===================================================== --> 
+    <title>Σπάρτα ανθισμένα</title> 
+    <meta name="description" content="A lightweight and dead simple lightbox script"> 
+
+<!-- Favicon  ========================================== --> 
+	<link rel="icon" href="favicon.ico">
+
+<!-- CSS ====================================================== --> 
+
+
+
+<style>
+body, html {
+	padding:0px;
+	margin:0px;
+	color:#fff;
+	font-size: 18px;	
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  <!--
+	text-align: center;
+  -->
+}
+header {
+	background:#fff;
+	color:#555;
+	font-size: 14px;
+}
+header i {
+	background:#999;
+	color:#fff;
+	width:18px;
+	height:18px;
+	display: inline-block;
+	border-radius:9px;
+}
+.head-centering {	
+	max-width: 900px;
+	margin:0 auto;
+	padding:30px;
+}
+header h1 {
+	font-size: 60px;
+}
+.page{
+	padding: 5px 0px 30px 0px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+.page ul {
+	text-align: left;
+	display: block;
+	margin: 0 auto;
+	background: #407AC4;
+	max-width: 900px;
+	padding: 30px 60px;
+}
+header a:link,
+header a:visited {
+	color:#222;
+}
+hr {
+	border:0;
+	border-bottom: 2px solid #fff;
+}
+a:hover {
+	color:#449a8c;
+}
+pre {
+	background: #333;
+	padding: 10px;
+	overflow: auto;
+	color: #BBB7A9;
+}
+.button {
+	text-decoration: none;
+	color: #fff;
+	background: none;
+	text-align: center;
+	border: 2px solid #fff;
+	padding: 8px 15px 12px 15px;
+	margin:5px 0;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 1em;
+}
+.button:hover {
+	background:#fff;
+	color:#F0353A;
+}
+.demo-centering {
+	max-width: 600px;
+	margin:0 auto;
+	padding:30px 30px 40px 30px;
+	-webkit-transition:padding .4s ease-out;
+}
+
+@media all and (max-width: 768px) {
+	.demo-centering {
+		padding:0 0 40px 0;
+	}
+}
+@media all and (max-width: 450px) {
+	header h1 {
+		font-size: 30px;
+	}
+}
+</style>
+
+
+<!-- ακολουθεί το δεύτερο Css -->
+
+<style>
+/* Captions */
+.ss-capwrap {
+    text-align:center;
+    position:absolute;
+    bottom:5px;
+    width:100%;
+    text-align: center;
+}
+.ss-caption {
+    border-radius: 4px;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(41, 41, 41, 0.89);
+    font-weight: bold;
+    padding: 15px 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Pagination */
+.ss-pag-wrap {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding-top:15px;
+}
+.ss-paginate {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: #000;  
+}
+.ss-paginate a:link,
+.ss-paginate a:visited {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin: 3px 6px;
+    background: #F0353A;
+    -webkit-transition:all .2s ease-out;
+}
+.ss-paginate a:hover {
+    box-shadow: 0 0px 0 2px #F0353A;
+}
+.ss-current {
+    background: #000!important;
+    box-shadow: 0 0px 0 2px #F0353A;
+}
+
+/* Previous & Next Buttons */
+#ss-prev, #ss-next {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    font-size: 12px;
+    font-family: serif;
+    margin-top: -15px;
+    line-height: 31px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 17px;
+    text-align: center;
+    box-shadow:0 0 0 2px #fff;
+    -webkit-transition:all .2s ease-out;
+}
+#ss-prev:hover, #ss-next:hover {
+    color:#444;
+    background: #fff; 
+}
+#ss-prev {
+    left:10px;
+}
+#ss-next {
+    right:10px;
+}
+
+/* Probably don't need to edit below here */
+.ss-slides-wrap {
+    position: relative;
+    display: block;
+    line-height: 0px;
+}
+.ss-slides {
+    position:relative;
+    overflow:hidden;
+    display:block;
+    transform-origin:50% 50%;
+    -ms-transform-origin:50% 50%;
+    -webkit-transform-origin:50% 50%;
+}
+.ss-slide {
+    top:0;
+    left:0;
+    position: absolute;
+    width:100%;
+    zoom: 1;
+    line-height:0;
+    -webkit-backface-visibility: hidden;
+}
+.ss-slide:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.ss-slide img {
+    max-width:100%;    
+}
+.notrans {
+    -webkit-transition: none!important;
+    -moz-transition:none!important;
+    transition: none!important;
+}
+</style>
+
+
+	
+</head>
+
+<body style="background-color: #000000">
+
+    <img border="0" data-original-height="111" data-original-width="313" height="71" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqRiw1KIGawZOcXk4hZEvWLjAO2ydt05J6g2ENwZagTQPTkwOXPjpO0FXAusXa7iLB5lkq8-7fS2O5HAhx5bMJjQVudFJnglrb7nHcoYC-sts31F42RJ6pgp9QrEy_doNm9p8pGgJa1PrWnV1w6PxCjAzyBiE30PNEyO8Pupizj6aOPoWJJ9HIAavm/w200-h71/ServouVillage_1_313.png" width="200" />
+    <p style="text-align:center">
+    Σπάρτα σε ανθοφορία
+    </p>
+    
+<div class="demo-centering">
+  <!-- markup for slideshow -->
+	<div class="ss-slides">
+	    <div class="ss-slide">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2swSCp3gbRnFqDS0ekrPakEyzjf4c9JGSKGH7RTE0o5AzWnPJ8BUTme830WvjC4zYzfNXoBA2C7t2-N_tEKEpLXXS4E5jBUUXuaLYulafuQzrBkQq1VjjCcpvX27yVu9ltzzroC11gmw/s1600/sparta_1.jpg" />
+	    </div>
+	    <div class="ss-slide">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjskZDwoYXBTlp296HayWF3JwpVdTk6KSA-EpkRJDBvs0rOhPQebOH0lD3AVscXw92ai8IpPhZNEtTtKvHYTlOezsJfV_O4AVUOxIcKdhmRyinhkKEwsktvskt_SAwlDCg0_5x2HFGXgjE/s1600/sparta_2.jpg" />
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha7ByhQQNVvdCDeGA3QBajg1X9yw34sdibsbefHSRvTzmmQo7bNjO53Flf0Od1k-Z-4MBbSd7_TSK41pTSpbmpCzPSLOCPwuekA9qi5iPN9E2QFH8Qo79ScPtuITiX34zTZYSdn6H28D8/s1600/sparta_3.jpg" />
+	    </div>
+	    <div class="ss-slide" title="">
+	          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJM7znOI5vHl9v9ckZtY2KlPDcKGZdqeEQDtCbwYO-_nTk5HIx9i_4Y4pFff-OHaZOnrz8tFQzQT0sfzmuz1EeszdYUDt-lPGD2pybHWribqbWM9nUWkI3WbZW62emNMHJ-_mVamriGfA/s1600/sparta_4.jpg" /> 
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1vb73cxrmQgQOGqGIM57vL_CsKi1pHNYvG_5f_R3Qcav4bPxBGpuQzj3arVmEBheQ99TFvHgq9tth50liIODJg8o09IEVsoD0YDwTqB4jpqDh0TeLOGSh_Xg4BIOlsFXm23zXVm9YiW8/s1600/sparta_5.jpg" /> 
+	    </div>
+        <div class="ss-slide" title="">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5v4IJsG8rJGMNKy_t7CDpaRLxqmmszA4QbIEw3D-ei-7Dc0fFkAj_7v_gDCv_vvXqstcuhQcSijK3qR0AqNUzQXGrwOVwYU2Drn1sOuetuqA-UA7e_Ic849SgJhvRN9pwrIIAfcwEMbg/s1600/Spartium_junceum-2.jpg" /> 
+	    </div>
+	    
+	    <div class="ss-slide" title="">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFK7foWlH9kzp9e4S9Z-JJRZbT41-eDpMACS451YuFdWFm1dfMqhx2ezBxV2XFu7OuXG97J2qXSHeloIC9ilxV37aux6jb18Pr4AkUDwKY0KK_o30chpMVhgULxher-I0ZrXyyEDdRHlM/s1600/ginestra01.jpg" /> 
+	    </div>	    
+	    <div class="ss-slide" title="">
+	        <img src="https://lh6.ggpht.com/_hTt7ulSkLpI/R5yhQ5TezlI/AAAAAAAAO7g/OSD4S_LAcVs/s800/spartium_junceum_26.jpg" /> 
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="https://www.correzitude.fr/GUDI/EXPOAVRIL2008/Spartium_junceum.jpg" /> 
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="http://www.giorgioventurini.net/fiori/leguminose/spartium_junceum/spartium_junceum08368.jpg" /> 
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="https://media.tumblr.com/tumblr_me41ftQicq1qc62t8.jpg" /> 
+	    </div>
+	    <div class="ss-slide" title="">
+	        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVEq70dz9HBPBvhetkG7NCa4OJBc0DnG1NEVeivOh_VEtfgHvXkVNISVCsak1skb6X9XpsMhWP4pKmh8ZiMv4hOOJlvyr51NU3HukRKVVXi6WG5YPIC6bGAArVTOZ_6HrWVtL1nEpy5ieb/s1600/sparto+Artozinos-W800.jpg" /> 
+	    </div>
+	    
+	   
+	 
+	  	</div>
+</div>
+    <p style="text-align:center">
+    <i>xridim</i>
+    </p>
+  <br />
+    
+<!-- JS ======================================================= --> 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+	<script>
+/* ακολουθεί το Smoothslides.min.js  */
+
+!function($){$.fn.extend({smoothSlides:function(options){function captionUpdater(){if($(".ss-slide:eq(-2)").attr("title")){var a=$(".ss-slide:eq(-2)").attr("title");$(".ss-caption").html(a).fadeIn(500)}else $(".ss-caption").fadeOut(500,function(){$(".ss-caption").empty()})}function paginateForwards(){var a=$(".ss-current").index()+1,c=$(".ss-paginate a").length;a>=c?($(".ss-current").removeClass("ss-current"),$(".ss-paginate a:first").addClass("ss-current")):($(".ss-current").removeClass("ss-current"),$(".ss-paginate a").eq(a).addClass("ss-current"))}function paginateBackwards(){var a=$(".ss-current").index()+1,b=a-2;$(".ss-paginate a").length,1>=a?($(".ss-current").removeClass("ss-current"),$(".ss-paginate a:last").addClass("ss-current")):($(".ss-current").removeClass("ss-current"),$(".ss-paginate a").eq(b).addClass("ss-current"))}function crossFade(){captionUpdater(),paginateForwards(),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)",opacity:"0"}).show(),$(".ss-slide:first").css({opacity:"1"})})}function zoomIn(){captionUpdater(),paginateForwards(),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").css({webkitTransform:"scale(1.2)  rotate(2deg)",msTransform:"scale(1.2)  rotate(2deg)",transform:"scale(1.2)  rotate(2deg)"})})}function zoomOut(){captionUpdater(),paginateForwards(),$(".ss-slide:eq(-2)").addClass("notrans").css({webkitTransform:"scale(1.2) rotate(2deg)",msTransform:"scale(1.2) rotate(2deg)",transform:"scale(1.2) rotate(2deg)"}),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"})})}function panRight(){captionUpdater(),paginateForwards(),$(".ss-slide:eq(-2)").addClass("notrans").css({webkitTransform:"scale(1.3) translate(-10%, 0)",msTransform:"scale(1.3) translate(-10%, 0)",transform:"scale(1.3) translate(-10%, 0)"}),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").removeClass("notrans").css({webkitTransform:"scale(1.3) translate(0,0)",msTransform:"scale(1.3) translate(0,0)",transform:"scale(1.3) translate(0,0)"})})}function panLeft(){captionUpdater(),paginateForwards(),$(".ss-slide:eq(-2)").addClass("notrans").css({webkitTransform:"scale(1.3) translate(10%, 0)",msTransform:"scale(1.3) translate(10%, 0)",transform:"scale(1.3) translate(10%, 0)"}),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").removeClass("notrans").css({webkitTransform:"scale(1.3) translate(0,0)",msTransform:"scale(1.3) translate(0,0)",transform:"scale(1.3) translate(0,0)"})})}function panUp(){captionUpdater(),paginateForwards(),$(".ss-slide:eq(-2)").addClass("notrans").css({webkitTransform:"scale(1.3) translate(0, 10%)",msTransform:"scale(1.3) translate(0, 10%)",transform:"scale(1.3) translate(0, 10%)"}),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").removeClass("notrans").css({webkitTransform:"scale(1.3) translate(0,0)",msTransform:"scale(1.3) translate(0,0)",transform:"scale(1.3) translate(0,0)"})})}function panDown(){captionUpdater(),paginateForwards(),$(".ss-slide:eq(-2)").addClass("notrans").css({webkitTransform:"scale(1.3) translate(0, -10%)",msTransform:"scale(1.3) translate(0, -10%)",transform:"scale(1.3) translate(0, -10%)"}),$(".ss-slide:last").addClass("notrans").fadeOut("slow",function(){$(this).prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-slide:last").removeClass("notrans").css({webkitTransform:"scale(1.3) translate(0,0)",msTransform:"scale(1.3) translate(0,0)",transform:"scale(1.3) translate(0,0)"})})}var defaults={duration:6e3,autoPlay:"true",effect:"random",effectEasing:"ease-in-out",nextText:" \u25ba",prevText:"\u25c4 ",captions:"true",navigation:"true",pagination:"true",order:"normal"},options=$.extend(defaults,options),convertSeconds=options.duration/1e3-.5;if($(".ss-slide").css({webkitTransition:"all "+convertSeconds+"s "+options.effectEasing,mozTransition:"all "+convertSeconds+"s "+options.effectEasing,msTransition:"all "+convertSeconds+"s "+options.effectEasing,oTransition:"all "+convertSeconds+"s "+options.effectEasing,transition:"all "+convertSeconds+"s "+options.effectEasing}),$(".ss-slide:last").css("position","relative"),$(".ss-slides").wrap('<div class="ss-slides-wrap"></div>'),$.fn.randomize=function(a){return(a?this.find(a):this).parent().each(function(){$(this).children(a).sort(function(){return Math.random()-.5}).detach().appendTo(this)}),this},"true"==options.captions&&$(".ss-slides-wrap").append('<div class="ss-capwrap"><div class="ss-caption"></div></div>'),"true"==options.autoPlay){if($(".ss-slide:last").attr("title")){var caption=$(".ss-slide:last").attr("title");$(".ss-caption").html(caption)}}else if($(".ss-slide:first").attr("title")){var caption=$(".ss-slide:first").attr("title");$(".ss-caption").html(caption)}else $(".ss-caption").hide();if("true"==options.pagination&&($(".ss-slides-wrap").append('<div class="ss-pag-wrap"><div class="ss-paginate"></div></div>'),$(".ss-slide").each(function(){$(".ss-paginate").append('<a href="#"></a>')}),"true"==options.autoPlay?$(".ss-paginate a:last").addClass("ss-current"):$(".ss-paginate a:first").addClass("ss-current")),"true"==options.navigation&&$(".ss-slides-wrap").append('<a href="#" id="ss-prev">'+options.prevText+'</a><a href="#" id="ss-next">'+options.nextText+"</a>"),"normal"==options.order?($(".ss-slide").each(function(){$(this).prependTo(this.parentNode)}),"true"==options.autoPlay&&$(".ss-slide:first").appendTo(".ss-slides")):"random"==options.order?$(".ss-slide").randomize():"reverse"==options.order&&$(".ss-slide:first").appendTo(".ss-slides"),"false"==options.autoPlay);else if("random"==options.effect){var fns=[zoomOut,zoomIn,panRight,panLeft];fns[Math.floor(Math.random()*fns.length)]()}else"false"==options.effect||eval(options.effect+"()");var fn=function(){if("random"==options.effect&&"true"==options.autoPlay){var fns=[zoomOut,zoomIn,panRight,panLeft,panUp,panDown];fns[Math.floor(Math.random()*fns.length)]()}else"false"==options.effect||eval(options.effect+"()")};if("true"==options.autoPlay)var myInterval=setInterval(fn,options.duration);$("#ss-prev, #ss-next, .ss-paginate").hover(function(){clearInterval(myInterval)},function(){myInterval=setInterval(fn,options.duration)});var quickNext=function(){$("#ss-next").off("click"),$(".ss-slide:last").addClass("notrans").fadeOut("250",function(){$(".ss-slide:last").prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)",opacity:"1"}).show(),$("#ss-next").on("click",quickNext)}),captionUpdater(),paginateForwards(),event.preventDefault()};$("#ss-next").on("click",quickNext);var quickPrev=function(){if($("#ss-prev").off("click"),$(".ss-slide:first").attr("title")){var a=$(".ss-slide:first").attr("title");$(".ss-caption").html(a).show()}else $(".ss-caption").empty().hide();paginateBackwards(),$(".ss-slide:first").hide().addClass("notrans").appendTo(".ss-slides").fadeIn(),$("#ss-prev").on("click",quickPrev),event.preventDefault()};$("#ss-prev").on("click",quickPrev),$(document.body).on("click",".ss-paginate a",function(a){var b=$(this).index()+1,c=$(".ss-current").index()+1;if(c>b)for(var d=c-b,e=0;d>e;e++)$(".ss-slide:first").appendTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)"}).show(),$(".ss-current").removeClass(),$(".ss-paginate a").eq(b-1).addClass("ss-current");else if(b>c)for(var d=b-c,e=0;d>e;e++)$(".ss-slide:last").prependTo(".ss-slides").removeClass("notrans").css({webkitTransform:"scale(1) rotate(0deg)",msTransform:"scale(1) rotate(0deg)",transform:"scale(1) rotate(0deg)",display:"none"}).show(),$(".ss-current").removeClass(),$(".ss-paginate a").eq(b-1).addClass("ss-current");if($(".ss-slide:last").attr("title")){var f=$(".ss-slide:last").attr("title");$(".ss-caption").html(f).fadeIn(500)}else $(".ss-caption").fadeOut(500,function(){$(".ss-caption").empty()});a.preventDefault()})}})}(jQuery);
+
+</script>	
+	
+	
+	<script type="text/javascript">
+		/* wait for images to load */
+		$(window).load( function() {
+			$(document).smoothSlides({
+			duration: 4000
+			/* options seperated by commas */
+			});
+		});
+	</script>
+</body>
+</html>
+
