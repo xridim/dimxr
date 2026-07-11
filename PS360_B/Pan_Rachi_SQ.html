@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>Πανοραμική Φωτογραφία - Σέρβου, Πλατεία Ράχης</title>
+    <link href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg96xW0EbBDzGhzx6no0JGW7WEevIM4TnwYfsn1jDIOaoW3LMFNs-4tlmfvDRbYyJ9kgymmfloiZ-pVJa4M7tGxs44y3mObOG4evL8qpWF9YBe8Wv4BQFp1NPob15bKSkaIGhDv8lt1rxFPO34TwC_6NVkBYifZ8xCyIt0V-Evx0xp21XYCFQxQEa2LZ50/s1280/RACHI_STAVROS_1280.jpg" rel="image_src"></link>   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5/index.css">
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            height: 100dvh; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        #tap-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 9999;
+            cursor: pointer;
+            font-family: sans-serif;
+            transition: opacity 0.8s ease;
+        }
+
+        .psv-navbar {
+            padding-bottom: env(safe-area-inset-bottom) !important;
+            background: rgba(0, 0, 0, 0.4) !important;
+        }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+                "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5/index.module.js",
+                "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5/index.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="tap-overlay">
+        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 50%; border: 2px solid white; margin-bottom: 15px;">
+            <span style="font-size: 40px;">▶</span>
+        </div>
+        <p style="font-size: 22px; margin: 0; font-weight: bold;">Αγγίξτε για έναρξη</p>
+        <p style="font-size: 14px; opacity: 0.7;">Auto-resume rotation active</p>
+    </div>
+
+    <div id="viewer"></div>
+
+    <script type="module">
+        import { Viewer, utils } from '@photo-sphere-viewer/core';
+        import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
+
+        const baseUrl = 'https://photo-sphere-viewer-data.netlify.app/assets/';
+
+        const animatedValues = {
+            pitch: { start: -Math.PI / 2, end: 0 },
+            yaw: { start: Math.PI / 2, end: 0 },
+            zoom: { start: 0, end: 50 },
+            maxFov: { start: 130, end: 90 },
+            fisheye: { start: 2, end: 0 },
+        };
+
+        const viewer = new Viewer({
+            container: 'viewer',
+            panorama:'https://iili.io/FcJHCNt.jpg',
+            caption: 'Σέρβου Αρκαδίας - Θέα από την Πλατεία της  Ράχης - Photo: By Stavros Vergos',
+            defaultPitch: animatedValues.pitch.start,
+            defaultYaw: animatedValues.yaw.start,
+            defaultZoomLvl: animatedValues.zoom.start,
+            maxFov: animatedValues.maxFov.start,
+            fisheye: animatedValues.fisheye.start,
+            mousemove: false,
+            mousewheel: false,
+            navbar: [
+                'autorotate',
+                'zoom',
+                {
+                    title: 'Rerun animation',
+                    content: '🔄',
+                    onClick: reset,
+                },
+                'caption',
+                'fullscreen',
+            ],
+            plugins: [
+                [AutorotatePlugin, {
+                    // ΝΕΕΣ ΡΥΘΜΙΣΕΙΣ ΓΙΑ ΑΥΤΟΜΑΤΗ ΕΠΑΝΕΚΚΙΝΗΣΗ:
+                    autostartDelay: 5000, // 5000ms = 5 δευτερόλεπτα αδράνειας
+                    autostartOnIdle: true, // Επανεκκίνηση όταν ο χρήστης σταματήσει το κούνημα
+                    autorotatePitch: 0,
+                }],
+            ],
+        });
+
+        const autorotate = viewer.getPlugin(AutorotatePlugin);
+        let isStarted = false;
+
+        viewer.addEventListener('ready', () => {
+            viewer.navbar.hide();
+        }, { once: true });
+
+        const overlay = document.getElementById('tap-overlay');
+        
+        overlay.addEventListener('click', () => {
+            if (!isStarted) {
+                isStarted = true;
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.remove(), 800);
+
+                try {
+                    viewer.enterFullscreen();
+                } catch (e) {}
+
+                startIntro();
+            }
+        });
+
+        function startIntro() {
+            autorotate.stop();
+            viewer.navbar.hide();
+
+            new utils.Animation({
+                properties: {
+                    ...animatedValues,
+                    pitch: { start: animatedValues.pitch.start, end: 0 },
+                    yaw: { start: animatedValues.yaw.start, end: 0 },
+                },
+                duration: 2500,
+                easing: 'inOutQuad',
+                onTick: (properties) => {
+                    viewer.setOptions({
+                        fisheye: properties.fisheye,
+                        maxFov: properties.maxFov,
+                    });
+                    viewer.rotate({ yaw: properties.yaw, pitch: properties.pitch });
+                    viewer.zoom(properties.zoom);
+                },
+            }).then(() => {
+                autorotate.start();
+                viewer.navbar.show();
+                viewer.setOptions({
+                    mousemove: true,
+                    mousewheel: true,
+                });
+            });
+        }
+
+        function reset() {
+            autorotate.stop();
+            viewer.navbar.hide();
+            viewer.setOptions({
+                mousemove: false,
+                mousewheel: false,
+            });
+
+            new utils.Animation({
+                properties: {
+                    pitch: { start: viewer.getPosition().pitch, end: animatedValues.pitch.start },
+                    yaw: { start: viewer.getPosition().yaw, end: animatedValues.yaw.start },
+                    zoom: { start: viewer.getZoomLevel(), end: animatedValues.zoom.start },
+                    maxFov: { start: viewer.getConfig().maxFov, end: animatedValues.maxFov.start },
+                    fisheye: { start: viewer.getConfig().fisheye, end: animatedValues.fisheye.start },
+                },
+                duration: 1500,
+                easing: 'inOutQuad',
+                onTick: (properties) => {
+                    viewer.setOptions({
+                        fisheye: properties.fisheye,
+                        maxFov: properties.maxFov,
+                    });
+                    viewer.rotate({ yaw: properties.yaw, pitch: properties.pitch });
+                    viewer.zoom(properties.zoom);
+                },
+            });
+        }
+    </script>
+</body>
+</html>
